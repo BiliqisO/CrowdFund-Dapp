@@ -1,0 +1,135 @@
+[
+  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  {
+    "inputs": [],
+    "name": "CampaignId",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_duration", "type": "uint256" },
+      { "internalType": "uint256", "name": "_fundingGoal", "type": "uint256" },
+      { "internalType": "string", "name": "_campaignTitle", "type": "string" }
+    ],
+    "name": "createCampaigns",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllCampaign",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "campaignId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "campaignTitle",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fundingGoal",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "duration", "type": "uint256" },
+          {
+            "internalType": "address",
+            "name": "campaignOwner",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "campaignBalance",
+            "type": "uint256"
+          },
+          { "internalType": "bool", "name": "isActive", "type": "bool" },
+          {
+            "internalType": "address[]",
+            "name": "contributors",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct CrowdFund.Campaign[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CampaignId", "type": "uint256" }
+    ],
+    "name": "getContributors",
+    "outputs": [
+      { "internalType": "address[]", "name": "", "type": "address[]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_addr", "type": "address" },
+      { "internalType": "uint256", "name": "_CampaignId", "type": "uint256" }
+    ],
+    "name": "getContributorsBalance",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "mapCampaign",
+    "outputs": [
+      { "internalType": "uint256", "name": "campaignId", "type": "uint256" },
+      { "internalType": "string", "name": "campaignTitle", "type": "string" },
+      { "internalType": "uint256", "name": "fundingGoal", "type": "uint256" },
+      { "internalType": "uint256", "name": "duration", "type": "uint256" },
+      { "internalType": "address", "name": "campaignOwner", "type": "address" },
+      {
+        "internalType": "uint256",
+        "name": "campaignBalance",
+        "type": "uint256"
+      },
+      { "internalType": "bool", "name": "isActive", "type": "bool" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CampaignId", "type": "uint256" }
+    ],
+    "name": "payCampaign",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CampaignId", "type": "uint256" }
+    ],
+    "name": "payCampaignOwner",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CampaignId", "type": "uint256" }
+    ],
+    "name": "refundContributors",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
