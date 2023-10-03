@@ -157,3 +157,9 @@ p {
   padding: 5px;
   font-size: 0.8rem;
 }
+.inactive {
+  text-align: center;
+}
+.big {
+  font-size: 1.5rem;
+}

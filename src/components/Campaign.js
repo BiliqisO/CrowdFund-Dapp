@@ -2,8 +2,10 @@ import React from "react";
 import useCampaignArray from "../hooks/useCampaignArray";
 import { formatDate } from "../hooks/useTime";
 import { Link } from "react-router-dom";
+import { useConnection } from "../context/connection";
 
 export const Campaign = () => {
+  const { active } = useConnection();
   const arrayCampaign = useCampaignArray();
 
   const showCampaign = arrayCampaign.map((camp) => {
@@ -25,5 +27,20 @@ export const Campaign = () => {
     );
   });
 
-  return <div className="body">{showCampaign}</div>;
+  return (
+    <div className="body">
+      {showCampaign}
+
+      {!active && (
+        <div className="inactive">
+          {" "}
+          <h1>CROWDFUND DAPP</h1>
+          <p className="big">
+            {" "}
+            connect your wallet (sepolia network) to get started
+          </p>{" "}
+        </div>
+      )}
+    </div>
+  );
 };
